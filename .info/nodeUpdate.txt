@@ -1,0 +1,8 @@
+https://dev.to/arnavkr/updating-node-js-to-16-in-replit-1ep0
+
+// Shell Command:
+
+npm init -y && npm i --save-dev node@16 && npm config set prefix=$(pwd)/node_modules/node && export PATH=$(pwd)/node_modules/node/bin:$PATH
+
+// Check success
+node -v
