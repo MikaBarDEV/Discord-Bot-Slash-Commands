@@ -1,4 +1,5 @@
 module.exports = (client, mdb) =>{
+mdb.fs.appendFileSync('./database/CLIENT/debugInfo.log', `\n\nNew Exec:`)
 
 client.on('ready', () => {
   require('../events/ready.js')(client, mdb)
@@ -14,7 +15,7 @@ client.on('interactionCreate', (interaction) => {
 
 // Dev Problems
 client.on("debug", (info) => {
-  console.log(`debug -> ${info}`);
+  mdb.fs.appendFileSync('./database/CLIENT/debugInfo.log', `\ndebug -> ${info}`)
 });
 
 client.on("error", (error) => {
